@@ -27,6 +27,19 @@ A primeira coisa a se observar é que o conjunto de dados tem uma discrepância 
 Em relação a variável amount, foi verificado que apresenta o mesmo comportamento para os casos de fraude e não-fraude.
 
 ## 4. Modelo de Machine Learning
+Para a construção do modelo, começei separando os dados de treino e validação, para poder avaliar a performance do modelo. E também utilizei duas abordagens para a escolha do algoritmo de Machine Learning. Primeiramente, utilizei a biblioteca PyCaret que funciona de forma mais automatizada e fornece 18 algoritmos de classificação, e dentre esses escolhi alguns para testar. Não utilizei todos os modelos, pois o conjunto de dados é relativamente grande, e demanda muito poder computacional para rodar os algoritmos. A segunda abordagem foi construir modelos de maneira mais manual, testei os modelos de Random Forest e Extreme Gradient Boosting, ambos modelos de classificação.
+
+Além disso, testei duas abordagem para tratar o desbalanceamento de classes que citei acima, que foram o oversampling que consiste em usar técnicas estatísticas para aumentar sinteticamente os dados da classe minoritária (fraude), e o undersampling que consiste em diminuir os dados da classe maioritária. Detalhes mais técnicos são encontrados no código.
+
+Após testar todos os modelos, o modelo que apresentou melhor performance, foi o Extreme Gradient Boosting que foi treinado utilizando os dados aplicando undersampling. O modelo teve uma acurácia de 97% para transações não-fraudulentas e 94% para transações fraudulentas, quando foi apresentado a novos dados, o que mostra uma boa performance do modeo. Abaixo, tem-se uma tabela com os resultados.
+
+![image](https://user-images.githubusercontent.com/66805980/132138682-68f44833-5aee-4b16-8402-d9d4981d00fd.png)
+
+## 5. Conclusão
+Com os resultados do trabalho em mãos, pode ser visto o valor que uma solução utilizando Machine Learning pode trazer a um negócio. Com o modelo que foi obtido foi possível prever 94% das transações fraudulentas. Ou seja, traria economia para os clientes que sofreram com a fraúde, e economia para a empresa de cartão que provavelmente teria que devolver o dinheiro para o cliente. Todos nós estamos sujeitos a situações como essa, principalmente no caso de transações que utilizam cartão de forma online, então pode ser visto o valor que tem um projeto para prever fraude.
+
+Como próximos passos para o projeto, poderia ser feita um solução em tempo real em que no momento que o cartão é utilizado, com o modelo em produção, é possível identificar se é uma fraude ou não, e se o modelo identificar como fraude, poderão ser tomadas as medidas pela empresa para interceptar a fraude.
+
 
 
 
