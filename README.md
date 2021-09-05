@@ -17,14 +17,12 @@ Como foi dito anteriormente, iremos utilizar Machine Learning para identificar a
 - Avaliação do modelo
 - Entrega da solução
 
-Para a entrega da solução, será fornecida uma tabela com a probabilidade das transações serem fraudulentas ou não.
+Para a entrega da solução, o modelo retornará a probabilidade da transação ser fraudulentas ou não.
 
 ## 3. Análise dos dados
 O conjunto de dados que estamos utilizando foi pré-processado pela fonte de dados para evitar vazar qualquer tipo de informação dos seus clientes, as únicas variáveis que tem-se o nome são: Amount, que representa o valor da transação; e Class, que representa se a transação foi fraudulenta (1) ou não (0). 
 
 A primeira coisa a se observar é que o conjunto de dados tem uma discrepância muito grande no número de observações para cada classe. Nos dados, encontramos 284315 casos de não-fraude, e apenas 492 casos de fraude. O que de certa forma é bom pois quer dizer a proporção de transações fraudulentas é baixa, porém para o treinamento do modelo isso é ruim, pois será mais difícil identificar padrões para as transações com fraude.
-
-Em relação a variável amount, foi verificado que apresenta o mesmo comportamento para os casos de fraude e não-fraude.
 
 ## 4. Modelo de Machine Learning
 Para a construção do modelo, começei separando os dados de treino e validação, para poder avaliar a performance do modelo. E também utilizei duas abordagens para a escolha do algoritmo de Machine Learning. Primeiramente, utilizei a biblioteca PyCaret que funciona de forma mais automatizada e fornece 18 algoritmos de classificação, e dentre esses escolhi alguns para testar. Não utilizei todos os modelos, pois o conjunto de dados é relativamente grande, e demanda muito poder computacional para rodar os algoritmos. A segunda abordagem foi construir modelos de maneira mais manual, testei os modelos de Random Forest e Extreme Gradient Boosting, ambos modelos de classificação.
